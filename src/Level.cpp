@@ -42,6 +42,7 @@ void Level::update()
     {
       if (isColliding(player.bullets[j].getRect(), enemies[i].getRect()))
       {
+        player.bullets.erase(player.bullets.begin() + j);
         enemies.erase(enemies.begin() + i);
       }
     }
