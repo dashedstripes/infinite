@@ -1,4 +1,9 @@
+CC=g++
+CFLAGS=-std=c++11
+INCLUDES=-Isrc
+LIBS=-lSDL2
+MAIN=main.cpp
 FILES=$(shell find src -type f -name "*.cpp")
 
 compile:
-	g++ -std=c++11 -Isrc -lSDL2 main.cpp $(FILES)
+	$(CC) $(CFLAGS) $(INCLUDES) $(LIBS) $(MAIN) $(FILES)
