@@ -71,6 +71,16 @@ void Game::update()
   if (stateManager.getCurrentState() == StateManager::State::PLAYING)
   {
     levelManager.getCurrentLevel()->update();
+
+    if (!levelManager.getCurrentLevel()->isActive())
+    {
+      stateManager.setCurrentState(StateManager::State::GAME_OVER);
+    }
+  }
+
+  if (stateManager.getCurrentState() == StateManager::State::GAME_OVER)
+  {
+    cout << "Game over" << endl;
   }
 }
 
@@ -87,6 +97,10 @@ void Game::render()
   if (stateManager.getCurrentState() == StateManager::State::PLAYING)
   {
     levelManager.getCurrentLevel()->render(renderer);
+  }
+
+  if (stateManager.getCurrentState() == StateManager::State::GAME_OVER)
+  {
   }
 
   SDL_RenderPresent(renderer);

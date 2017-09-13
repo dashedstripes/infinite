@@ -12,7 +12,8 @@ public:
   enum State
   {
     MENU,
-    PLAYING
+    PLAYING,
+    GAME_OVER
   };
 
   void setCurrentState(State newState);

@@ -11,7 +11,7 @@ Level::Level(int difficulty)
 
   if (difficulty == 1)
   {
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i <= 10; i++)
     {
       enemies.push_back(createEnemy());
     }
@@ -19,7 +19,7 @@ Level::Level(int difficulty)
 
   if (difficulty == 2)
   {
-    for (int i = 0; i < 20; i++)
+    for (int i = 0; i <= 20; i++)
     {
       enemies.push_back(createEnemy());
     }
@@ -32,7 +32,7 @@ Level::~Level()
 
 Enemy Level::createEnemy()
 {
-  return Enemy(rand() % (640 - 0 + 1) + 100, rand() % (250 - 10 + 1) + 10, 20, 20);
+  return Enemy(rand() % (600 - 100 + 1) + 100, rand() % (250 - 10 + 1) + 10, 20, 20);
 }
 
 void Level::update()
@@ -76,6 +76,19 @@ bool Level::isColliding(SDL_Rect *a, SDL_Rect *b)
       a->x + a->w > b->x &&
       a->y < b->y + b->h &&
       a->h + a->y > b->y)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
+
+bool Level::isActive()
+{
+  cout << enemies.size() << endl;
+  if (enemies.size() != 0)
   {
     return true;
   }

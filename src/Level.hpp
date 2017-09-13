@@ -17,6 +17,7 @@ public:
   Enemy createEnemy();
   Player player;
   bool isColliding(SDL_Rect *a, SDL_Rect *b);
+  bool isActive();
 
 private:
   int difficulty;
