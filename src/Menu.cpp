@@ -2,10 +2,10 @@
 
 Menu::Menu()
 {
-  rect.x = 100;
-  rect.y = 100;
-  rect.w = 100;
-  rect.h = 100;
+  rect.x = (640 / 2) - 100;
+  rect.y = (480 / 2) - 25;
+  rect.w = 200;
+  rect.h = 50;
 }
 
 Menu::~Menu()
