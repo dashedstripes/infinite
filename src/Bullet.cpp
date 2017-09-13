@@ -9,8 +9,8 @@ Bullet::Bullet(int x, int y)
   this->x = x;
   this->y = y;
 
-  w = 10;
-  h = 10;
+  w = 5;
+  h = 5;
 
   rect.x = this->x;
   rect.y = this->y;
