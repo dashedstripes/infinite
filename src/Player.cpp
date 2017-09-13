@@ -1,24 +1,9 @@
 #include "Player.hpp"
-#include <SDL2/SDL.h>
-#include <iostream>
-
-using namespace std;
 
 Player::Player(int x, int y, int w, int h)
-    : bullets({})
+    : Entity(x, y, w, h),
+      bullets({})
 {
-  this->x = x;
-  this->y = y;
-  this->w = w;
-  this->h = h;
-
-  rect.x = this->x;
-  rect.y = this->y;
-  rect.w = this->w;
-  rect.h = this->h;
-
-  vx = 0;
-  speed = 5;
 }
 
 Player::~Player()
@@ -27,12 +12,7 @@ Player::~Player()
 
 void Player::update()
 {
-  x += vx;
-
-  rect.x = this->x;
-  rect.y = this->y;
-  rect.w = this->w;
-  rect.h = this->h;
+  Entity::update();
 
   if (bullets.size() > 0)
   {
@@ -52,8 +32,7 @@ void Player::update()
 
 void Player::render(SDL_Renderer *renderer)
 {
-  SDL_SetRenderDrawColor(renderer, 142, 79, 175, 255);
-  SDL_RenderFillRect(renderer, &rect);
+  Entity::render(renderer);
 
   if (bullets.size() > 0)
   {
@@ -64,17 +43,7 @@ void Player::render(SDL_Renderer *renderer)
   }
 }
 
-void Player::setVx(int vx)
-{
-  this->vx = vx;
-}
-
 void Player::fire()
 {
   bullets.push_back(Bullet(this->x, this->y));
-}
-
-SDL_Rect *Player::getRect()
-{
-  return &rect;
 }
