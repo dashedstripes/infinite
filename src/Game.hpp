@@ -20,6 +20,7 @@ public:
   void render();
   void handleKeyDown(int keycode);
   void handleKeyUp(int keycode);
+  void handleMouseButtonDown(int mouseButton);
 
 private:
   int width;

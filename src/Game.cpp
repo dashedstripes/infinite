@@ -22,7 +22,7 @@ void Game::init()
   window = SDL_CreateWindow("Infinite", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
   renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC);
 
-  stateManager.setCurrentState(StateManager::State::PLAYING);
+  stateManager.setCurrentState(StateManager::State::MENU);
 
   isRunning = true;
 
@@ -53,6 +53,9 @@ void Game::handleEvents()
       break;
     case SDL_QUIT:
       isRunning = false;
+      break;
+    case SDL_MOUSEBUTTONDOWN:
+      handleMouseButtonDown(event.button.button);
       break;
     }
   }
@@ -125,6 +128,16 @@ void Game::handleKeyUp(int keycode)
     break;
   case SDLK_d:
     levelManager.getCurrentLevel()->player.setVx(0);
+    break;
+  }
+}
+
+void Game::handleMouseButtonDown(int mouseButton)
+{
+  switch (mouseButton)
+  {
+  case SDL_BUTTON_LEFT:
+    cout << "Mouse clicked" << endl;
     break;
   }
 }
