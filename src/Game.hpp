@@ -20,7 +20,7 @@ public:
   void render();
   void handleKeyDown(int keycode);
   void handleKeyUp(int keycode);
-  void handleMouseButtonDown(int mouseButton);
+  void handleMouseButtonDown(SDL_Event event);
 
 private:
   int width;

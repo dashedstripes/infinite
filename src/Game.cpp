@@ -55,7 +55,7 @@ void Game::handleEvents()
       isRunning = false;
       break;
     case SDL_MOUSEBUTTONDOWN:
-      handleMouseButtonDown(event.button.button);
+      handleMouseButtonDown(event);
       break;
     }
   }
@@ -132,12 +132,15 @@ void Game::handleKeyUp(int keycode)
   }
 }
 
-void Game::handleMouseButtonDown(int mouseButton)
+void Game::handleMouseButtonDown(SDL_Event event)
 {
-  switch (mouseButton)
+  switch (event.button.button)
   {
   case SDL_BUTTON_LEFT:
-    cout << "Mouse clicked" << endl;
+    if (menu.isPressed(event.button.x, event.button.y))
+    {
+      stateManager.setCurrentState(StateManager::State::PLAYING);
+    }
     break;
   }
 }

@@ -10,6 +10,7 @@ public:
   ~Menu();
   void update();
   void render(SDL_Renderer *renderer);
+  bool isPressed(int x, int y);
 
 private:
   SDL_Rect rect;
