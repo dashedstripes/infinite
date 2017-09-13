@@ -87,7 +87,6 @@ bool Level::isColliding(SDL_Rect *a, SDL_Rect *b)
 
 bool Level::isActive()
 {
-  cout << enemies.size() << endl;
   if (enemies.size() != 0)
   {
     return true;
