@@ -73,3 +73,8 @@ void Player::fire()
 {
   bullets.push_back(Bullet(this->x, this->y));
 }
+
+SDL_Rect *Player::getRect()
+{
+  return &rect;
+}

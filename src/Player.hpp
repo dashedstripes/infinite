@@ -11,13 +11,16 @@ using namespace std;
 class Player
 {
 public:
-  int speed;
   Player(int x, int y, int w, int h);
   ~Player();
   void update();
   void render(SDL_Renderer *renderer);
   void setVx(int vx);
   void fire();
+  SDL_Rect *getRect();
+
+  int speed;
+  vector<Bullet> bullets;
 
 private:
   int x;
@@ -26,7 +29,6 @@ private:
   int h;
   int vx;
   SDL_Rect rect;
-  vector<Bullet> bullets;
 };
 
 #endif

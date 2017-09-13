@@ -33,3 +33,8 @@ void Enemy::render(SDL_Renderer *renderer)
   SDL_SetRenderDrawColor(renderer, 14, 53, 24, 255);
   SDL_RenderFillRect(renderer, &rect);
 }
+
+SDL_Rect *Enemy::getRect()
+{
+  return &rect;
+}

@@ -11,6 +11,7 @@ public:
   void update();
   void render(SDL_Renderer *renderer);
   int getY();
+  SDL_Rect *getRect();
 
 private:
   int x;

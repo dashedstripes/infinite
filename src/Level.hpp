@@ -16,6 +16,7 @@ public:
   void render(SDL_Renderer *renderer);
   Enemy createEnemy();
   Player player;
+  bool isColliding(SDL_Rect *a, SDL_Rect *b);
 
 private:
   int difficulty;

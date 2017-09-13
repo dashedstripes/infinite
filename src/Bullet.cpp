@@ -44,3 +44,8 @@ int Bullet::getY()
 {
   return y;
 }
+
+SDL_Rect *Bullet::getRect()
+{
+  return &rect;
+}
