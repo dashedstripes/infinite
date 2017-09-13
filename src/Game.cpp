@@ -8,6 +8,7 @@ Game::Game()
       height(480)
 {
   isRunning = false;
+  isKeyDown = false;
 }
 
 Game::~Game()
@@ -90,6 +91,8 @@ void Game::render()
 
 void Game::handleKeyDown(int keycode)
 {
+  isKeyDown = true;
+
   switch (keycode)
   {
   case SDLK_w:
@@ -110,6 +113,7 @@ void Game::handleKeyDown(int keycode)
 
 void Game::handleKeyUp(int keycode)
 {
+  isKeyDown = false;
   switch (keycode)
   {
   case SDLK_w:

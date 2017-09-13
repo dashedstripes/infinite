@@ -25,6 +25,7 @@ private:
   int width;
   int height;
   bool isRunning;
+  bool isKeyDown;
   SDL_Window *window;
   SDL_Renderer *renderer;
   StateManager stateManager;
