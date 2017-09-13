@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include "Enemy.hpp"
+#include "Player.hpp"
 
 class Level
 {
@@ -14,6 +15,7 @@ public:
   void update();
   void render(SDL_Renderer *renderer);
   Enemy createEnemy();
+  Player player;
 
 private:
   int difficulty;

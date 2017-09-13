@@ -5,8 +5,7 @@ using namespace std;
 
 Game::Game()
     : width(640),
-      height(480),
-      player(width / 2, (height / 2) + 100, 10, 10)
+      height(480)
 {
   isRunning = false;
 }
@@ -67,8 +66,7 @@ void Game::update()
 
   if (stateManager.getCurrentState() == StateManager::State::PLAYING)
   {
-    levelManager.getCurrentLevel().update();
-    player.update();
+    levelManager.getCurrentLevel()->update();
   }
 }
 
@@ -84,8 +82,7 @@ void Game::render()
 
   if (stateManager.getCurrentState() == StateManager::State::PLAYING)
   {
-    levelManager.getCurrentLevel().render(renderer);
-    player.render(renderer);
+    levelManager.getCurrentLevel()->render(renderer);
   }
 
   SDL_RenderPresent(renderer);
@@ -98,15 +95,15 @@ void Game::handleKeyDown(int keycode)
   case SDLK_w:
     break;
   case SDLK_a:
-    player.setVx(-player.speed);
+    levelManager.getCurrentLevel()->player.setVx(-5);
     break;
   case SDLK_s:
     break;
   case SDLK_d:
-    player.setVx(player.speed);
+    levelManager.getCurrentLevel()->player.setVx(5);
     break;
   case SDLK_SPACE:
-    player.fire();
+    levelManager.getCurrentLevel()->player.fire();
     break;
   }
 }
@@ -118,12 +115,12 @@ void Game::handleKeyUp(int keycode)
   case SDLK_w:
     break;
   case SDLK_a:
-    player.setVx(0);
+    levelManager.getCurrentLevel()->player.setVx(0);
     break;
   case SDLK_s:
     break;
   case SDLK_d:
-    player.setVx(0);
+    levelManager.getCurrentLevel()->player.setVx(0);
     break;
   }
 }

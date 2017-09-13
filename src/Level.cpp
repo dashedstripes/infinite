@@ -1,7 +1,11 @@
 #include "Level.hpp"
+#include <iostream>
+
+using namespace std;
 
 Level::Level(int difficulty)
-    : enemies({})
+    : player(640 / 2, (480 / 2) + 100, 10, 10),
+      enemies({})
 {
     this->difficulty = difficulty;
 
@@ -34,6 +38,8 @@ void Level::update()
     {
         enemies[i].update();
     }
+
+    player.update();
 }
 
 void Level::render(SDL_Renderer *renderer)
@@ -42,4 +48,6 @@ void Level::render(SDL_Renderer *renderer)
     {
         enemies[i].render(renderer);
     }
+
+    player.render(renderer);
 }

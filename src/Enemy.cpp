@@ -15,7 +15,7 @@ Enemy::Enemy(int x, int y, int w, int h)
   rect.w = this->w;
   rect.h = this->h;
 
-  vx = 0;
+  vy = 10;
   speed = 5;
 }
 
@@ -25,6 +25,7 @@ Enemy::~Enemy()
 
 void Enemy::update()
 {
+  y += vy;
 }
 
 void Enemy::render(SDL_Renderer *renderer)

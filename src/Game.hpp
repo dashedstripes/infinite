@@ -27,7 +27,6 @@ private:
   bool isRunning;
   SDL_Window *window;
   SDL_Renderer *renderer;
-  Player player;
   StateManager stateManager;
   LevelManager levelManager;
   Menu menu;

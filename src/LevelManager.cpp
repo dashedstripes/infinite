@@ -1,7 +1,7 @@
 #include "LevelManager.hpp"
 
 LevelManager::LevelManager()
-    : currentLevel(2),
+    : currentLevel(1),
       levels({})
 {
   levels.push_back(Level(1));
@@ -12,15 +12,15 @@ LevelManager::~LevelManager()
 {
 }
 
-Level LevelManager::getCurrentLevel()
+Level *LevelManager::getCurrentLevel()
 {
   for (int i = 0; i < levels.size(); i++)
   {
     if (i == (currentLevel - 1))
     {
-      return levels[i];
+      return &levels[i];
     }
   }
 
-  return levels[0];
+  return &levels[0];
 }

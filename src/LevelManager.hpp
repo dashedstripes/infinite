@@ -10,7 +10,7 @@ class LevelManager
 public:
   LevelManager();
   ~LevelManager();
-  Level getCurrentLevel();
+  Level *getCurrentLevel();
 
 private:
   int currentLevel;
