@@ -44,6 +44,16 @@ SDL_Rect *Entity::getRect()
   return &rect;
 }
 
+int Entity::getX()
+{
+  return x;
+}
+
+int Entity::getY()
+{
+  return y;
+}
+
 void Entity::setVx(int vx)
 {
   this->vx = vx;

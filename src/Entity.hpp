@@ -11,6 +11,8 @@ public:
   void update();
   void render(SDL_Renderer *renderer);
   SDL_Rect *getRect();
+  int getX();
+  int getY();
   void setVx(int vx);
   void setVy(int vy);
 

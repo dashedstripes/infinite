@@ -2,25 +2,13 @@
 #define ENEMY_HPP
 
 #include <SDL2/SDL.h>
+#include "Entity.hpp"
 
-class Enemy
+class Enemy : public Entity
 {
 public:
-  int speed;
   Enemy(int x, int y, int w, int h);
   ~Enemy();
-  void update();
-  void render(SDL_Renderer *renderer);
-  SDL_Rect *getRect();
-
-private:
-  int x;
-  int y;
-  int w;
-  int h;
-  int vx;
-  int vy;
-  SDL_Rect rect;
 };
 
 #endif
