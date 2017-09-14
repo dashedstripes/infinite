@@ -11,6 +11,11 @@ Entity::Entity(int x, int y, int w, int h)
   rect.y = this->y;
   rect.w = this->w;
   rect.h = this->h;
+
+  color.r = 255;
+  color.g = 255;
+  color.b = 255;
+  color.a = 255;
 }
 
 Entity::~Entity()
@@ -19,7 +24,7 @@ Entity::~Entity()
 
 void Entity::render(SDL_Renderer *renderer)
 {
-  SDL_SetRenderDrawColor(renderer, 142, 79, 175, 255);
+  SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
   SDL_RenderFillRect(renderer, &rect);
 }
 
