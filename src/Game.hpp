@@ -4,9 +4,9 @@
 #include <SDL2/SDL.h>
 #include <iostream>
 #include <vector>
-#include "StateManager.hpp"
-#include "LevelManager.hpp"
-#include "Menu.hpp"
+#include "State/StateManager.hpp"
+#include "Levels/LevelManager.hpp"
+#include "GUI/Menu.hpp"
 
 class Game
 {
