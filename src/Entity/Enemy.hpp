@@ -2,9 +2,9 @@
 #define ENEMY_HPP
 
 #include <SDL2/SDL.h>
-#include "Entity.hpp"
+#include "MoveableEntity.hpp"
 
-class Enemy : public Entity
+class Enemy : public MoveableEntity
 {
 public:
   Enemy(int x, int y, int w, int h);

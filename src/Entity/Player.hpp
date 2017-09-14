@@ -4,10 +4,10 @@
 #include <SDL2/SDL.h>
 #include <iostream>
 #include <vector>
-#include "Entity.hpp"
+#include "MoveableEntity.hpp"
 #include "Bullet.hpp"
 
-class Player : public Entity
+class Player : public MoveableEntity
 {
 public:
   Player(int x, int y, int w, int h);

@@ -1,7 +1,7 @@
 #include "Player.hpp"
 
 Player::Player(int x, int y, int w, int h)
-    : Entity(x, y, w, h),
+    : MoveableEntity(x, y, w, h),
       bullets({})
 {
 }
@@ -12,7 +12,7 @@ Player::~Player()
 
 void Player::update()
 {
-  Entity::update();
+  MoveableEntity::update();
 
   if (bullets.size() > 0)
   {
@@ -32,7 +32,7 @@ void Player::update()
 
 void Player::render(SDL_Renderer *renderer)
 {
-  Entity::render(renderer);
+  MoveableEntity::render(renderer);
 
   if (bullets.size() > 0)
   {

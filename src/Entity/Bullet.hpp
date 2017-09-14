@@ -2,9 +2,9 @@
 #define BULLET_HPP
 
 #include <SDL2/SDL.h>
-#include "Entity.hpp"
+#include "MoveableEntity.hpp"
 
-class Bullet : public Entity
+class Bullet : public MoveableEntity
 {
 public:
   Bullet(int x, int y);

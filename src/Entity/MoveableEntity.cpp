@@ -1,6 +1,6 @@
-#include "Entity.hpp"
+#include "MoveableEntity.hpp"
 
-Entity::Entity(int x, int y, int w, int h)
+MoveableEntity::MoveableEntity(int x, int y, int w, int h)
 {
   this->x = x;
   this->y = y;
@@ -18,11 +18,11 @@ Entity::Entity(int x, int y, int w, int h)
   speed = 5;
 }
 
-Entity::~Entity()
+MoveableEntity::~MoveableEntity()
 {
 }
 
-void Entity::update()
+void MoveableEntity::update()
 {
   x += vx;
   y += vy;
@@ -33,33 +33,33 @@ void Entity::update()
   rect.h = this->h;
 }
 
-void Entity::render(SDL_Renderer *renderer)
+void MoveableEntity::render(SDL_Renderer *renderer)
 {
   SDL_SetRenderDrawColor(renderer, 142, 79, 175, 255);
   SDL_RenderFillRect(renderer, &rect);
 }
 
-SDL_Rect *Entity::getRect()
+SDL_Rect *MoveableEntity::getRect()
 {
   return &rect;
 }
 
-int Entity::getX()
+int MoveableEntity::getX()
 {
   return x;
 }
 
-int Entity::getY()
+int MoveableEntity::getY()
 {
   return y;
 }
 
-void Entity::setVx(int vx)
+void MoveableEntity::setVx(int vx)
 {
   this->vx = vx;
 }
 
-void Entity::setVy(int vy)
+void MoveableEntity::setVy(int vy)
 {
   this->vy = vy;
 }

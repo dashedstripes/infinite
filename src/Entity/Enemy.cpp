@@ -4,7 +4,7 @@
 using namespace std;
 
 Enemy::Enemy(int x, int y, int w, int h)
-    : Entity(x, y, w, h)
+    : MoveableEntity(x, y, w, h)
 {
 }
 

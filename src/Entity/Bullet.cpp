@@ -4,7 +4,7 @@
 using namespace std;
 
 Bullet::Bullet(int x, int y)
-    : Entity(x, y, 5, 5)
+    : MoveableEntity(x, y, 5, 5)
 {
   this->vy = -20;
 }

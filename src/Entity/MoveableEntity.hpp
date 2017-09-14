@@ -1,13 +1,13 @@
-#ifndef ENTITY_HPP
-#define ENTITY_HPP
+#ifndef MOVEABLE_ENTITY_HPP
+#define MOVEABLE_ENTITY_HPP
 
 #include <SDL2/SDL.h>
 
-class Entity
+class MoveableEntity
 {
 public:
-  Entity(int x, int y, int w, int h);
-  ~Entity();
+  MoveableEntity(int x, int y, int w, int h);
+  ~MoveableEntity();
   void update();
   void render(SDL_Renderer *renderer);
   SDL_Rect *getRect();
