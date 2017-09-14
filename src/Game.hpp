@@ -4,7 +4,6 @@
 #include <SDL2/SDL.h>
 #include <iostream>
 #include <vector>
-#include "Player.hpp"
 #include "StateManager.hpp"
 #include "LevelManager.hpp"
 #include "Menu.hpp"

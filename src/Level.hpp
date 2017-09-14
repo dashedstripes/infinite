@@ -4,8 +4,8 @@
 #include <SDL2/SDL.h>
 #include <iostream>
 #include <vector>
-#include "Enemy.hpp"
-#include "Player.hpp"
+#include "Entity/Enemy.hpp"
+#include "Entity/Player.hpp"
 
 class Level
 {
