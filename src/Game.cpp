@@ -19,6 +19,7 @@ Game::~Game()
 void Game::init()
 {
   SDL_Init(SDL_INIT_EVERYTHING);
+  SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
 
   window = SDL_CreateWindow("Infinite", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
   renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC);

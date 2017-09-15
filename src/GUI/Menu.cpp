@@ -4,10 +4,10 @@
 Menu::Menu(SDL_Renderer *renderer)
 {
   img = IMG_LoadTexture(renderer, "res/images/play-button.png");
-  texr.x = 640 / 2 - 52;
-  texr.y = 480 / 2 - 35;
-  texr.w = 105;
-  texr.h = 70;
+  texr.x = 640 / 2 - 100;
+  texr.y = 480 / 2 - 30;
+  texr.w = 200;
+  texr.h = 60;
 }
 
 Menu::~Menu()
