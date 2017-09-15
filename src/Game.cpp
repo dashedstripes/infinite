@@ -85,6 +85,7 @@ void Game::update()
   if (stateManager.getCurrentState() == StateManager::State::GAME_OVER)
   {
     cout << "Game over" << endl;
+    isRunning = false;
   }
 }
 
