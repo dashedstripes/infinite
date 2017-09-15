@@ -13,6 +13,7 @@ public:
   bool isPressed(int x, int y);
 
 private:
+  SDL_Rect bg;
   SDL_Rect texr;
   SDL_Texture *img;
 };
