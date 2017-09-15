@@ -5,7 +5,8 @@ using namespace std;
 
 Game::Game()
     : width(640),
-      height(480)
+      height(480),
+      menu(NULL)
 {
   isRunning = false;
   isKeyDown = false;
@@ -21,6 +22,8 @@ void Game::init()
 
   window = SDL_CreateWindow("Infinite", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
   renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC);
+
+  menu = Menu(renderer);
 
   stateManager.setCurrentState(StateManager::State::MENU);
 

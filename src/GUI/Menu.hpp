@@ -6,14 +6,15 @@
 class Menu
 {
 public:
-  Menu();
+  Menu(SDL_Renderer *renderer);
   ~Menu();
   void update();
   void render(SDL_Renderer *renderer);
   bool isPressed(int x, int y);
 
 private:
-  SDL_Rect rect;
+  SDL_Rect texr;
+  SDL_Texture *img;
 };
 
 #endif
