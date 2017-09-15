@@ -2,6 +2,13 @@
 
 A 2D space invaders style game.
 
+# Required libraries
+
+```
+$ brew install sdl2
+$ brew install sdl2_image
+```
+
 ## Build the project
 
 ```
